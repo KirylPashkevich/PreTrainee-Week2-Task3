@@ -53,7 +53,7 @@ namespace Task3
                     {
                       
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine($"\nОшибка операции: {ex.Message}");
+                        Console.WriteLine($"Ошибка операции: {ex.Message}");
                         Console.ResetColor();
                     }
                 }
@@ -78,7 +78,7 @@ namespace Task3
             };
 
             int newId = await _repository.Add(newTask);
-            Console.WriteLine($"\n✅ Задача успешно добавлена с Id: {newId}");
+            Console.WriteLine($" Задача успешно добавлена с Id: {newId}");
         }
 
         private static async Task ViewAllTasksAsync()
@@ -96,7 +96,7 @@ namespace Task3
             {
                 string status = task.IsCompleted ? "[ГОТОВО]" : "[В РАБОТЕ]";
                 Console.WriteLine($"[{task.Id}] {status} - {task.Title} (Создана: {task.CreatedAt:yyyy-MM-dd})");
-                Console.WriteLine($"\tОписание: {task.Description}");
+                Console.WriteLine($"Описание: {task.Description}");
             }
             Console.WriteLine("-------------------------");
         }
@@ -124,7 +124,7 @@ namespace Task3
                     };
 
                     await _repository.Update(taskToUpdate);
-                    Console.WriteLine($"\n✅ Статус задачи Id:{id} успешно обновлен на {isCompleted}");
+                    Console.WriteLine($"\n Статус задачи Id:{id} успешно обновлен на {isCompleted}");
                 }
                 else
                 {
